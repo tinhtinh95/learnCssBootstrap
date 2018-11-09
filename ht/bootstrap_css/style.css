@@ -1,0 +1,89 @@
+.row{
+    padding: 10px 10px 10px 10px;
+}
+.box{
+    box-shadow: 2px 5px 8px #888888;
+    margin-bottom:20px;
+    background-color: white
+}
+.avatar{
+    position: relative;
+}
+.name{
+    position: absolute;
+    bottom:15px;
+    left: 30px;
+    font-size: 3em;
+}
+.card-body{
+    color: #778899;
+}
+.group-info{
+    border-bottom: 1px solid #D3D3D3;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+.group-info p{
+    font-size: 1.2em;
+    color: #778899;
+}
+.icon-small{
+    color: #20B2AA;
+    margin-right: 20px;
+    font-size:1.2em;
+    font-weight:bold;
+}
+.skill{
+    margin-bottom: 3rem;
+}
+.skill-title, .language-title{
+    font-size: 1.5em;
+    font-weight:bold;
+}
+.skill-name, .language-name{
+    font-size: 1.2em;
+}
+.progress {
+    height: 30px;
+    border-radius: 30px;
+    width:100%;
+    font-size:1.2em;
+    margin-bottom:17px;
+}
+.progress-bar {
+    border-radius: 40px;
+    background-color: #20B2AA;
+}
+
+progress[value]::-webkit-progress-bar {
+    background-color: #ededed;
+    border-radius: 40px;
+}
+progress[value]::-webkit-progress-value {
+    border-radius: 40px;
+    background-color: #20B2AA;
+}
+
+.icon-large{
+    color: #20B2AA;
+    margin-right: 20px;
+    font-size:3em;
+    font-weight:bold;
+}
+.work-experience{
+    padding:25px
+}
+.work-experience-title{
+    font-size:2.5em;
+    color: #778899;
+}
+.title{
+    margin-bottom: 40px;
+}
+.milestone{
+    padding: 10px;
+}
+.milestone-name{
+    color: #778899;
+    font-weight: bold
+}
