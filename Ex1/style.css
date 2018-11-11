@@ -18,11 +18,6 @@
 .card-body{
     color: #778899;
 }
-.group-info{
-    border-bottom: 1px solid #D3D3D3;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-}
 .group-info p{
     font-size: 1.2em;
     color: #778899;
@@ -70,20 +65,43 @@ progress[value]::-webkit-progress-value {
     font-size:3em;
     font-weight:bold;
 }
-.work-experience{
+.work-experience, .certificate{
     padding:25px
 }
-.work-experience-title{
+.work-experience hr, .certificate hr{
+    margin-bottom:2em;
+}
+.work-experience-title, .certificate-title{
     font-size:2.5em;
     color: #778899;
 }
 .title{
     margin-bottom: 40px;
 }
-.milestone{
-    padding: 10px;
-}
 .milestone-name{
     color: #778899;
     font-weight: bold
+}
+.milestone div .event{
+    padding: 10px 0 10px 0;
+}
+.milestone div p .time-event{
+    color: #20B2AA;
+    font-size: 1.2em;
+    font-family: Arial, Helvetica, sans-serif
+}
+.label-custom{
+    background-color: #20B2AA;
+    padding: 7px;
+    font-size: 1.2em;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+.footer{
+    background-color: #20B2AA;
+    text-align: center;
+    color: white;
+}
+.footer div p i:hover{
+    opacity: 0.5;
 }

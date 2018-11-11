@@ -1,0 +1,12 @@
+.header{
+    background-color: #20B2AA;
+}
+.side-navigation{
+    cursor: pointer;
+}
+.header-text{
+    text-align: center
+}
+.content{
+    padding: 20px
+}
