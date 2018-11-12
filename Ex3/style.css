@@ -1,0 +1,31 @@
+.header{
+    list-style-type: none;
+    overflow: hidden;
+    /* padding: 0;
+    margin: 0; */
+    background-color: #111
+}
+.header a:not(:last-child){
+    float: left;
+}
+.header .search{
+    float: right;
+}
+.header a{
+    color: white;
+    padding: 15px;
+    display: block;
+    text-decoration: none;
+
+}
+.header a:hover{
+    background-color: #333
+}
+.header .search:hover{
+    background-color: red;
+    /* height: li.height(); */
+}
+/* .fa-search{
+    display: inline-block;
+} */
+
