@@ -16,51 +16,358 @@
         <div class="row header">
             <div class="container-fluid">
                 <span class="side-navigation">&#9776;</span>
-                <div class="header-text">
+                <div class="text-center">
                     <p>BEAUTIFUL RESPONSIVE WEB SITES</p>
-                    <p>BUILT WITH BOOTSTRAP</p>
-                    <button>Learn CSS</button>
+                    <h1>BUILT WITH BOOTSTRAP</h1>
+                    <button >LEARN CSS</button>
                 </div>
             </div>
         </div>      
-        <div class="row content">
-            <div class="container-fluid ">
+        <div class="content">
+            <div class="intro-list">
                 <div class="row">
-                    <div class="card box col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                        <p>Responsive</p>
-                        <i class="fa fa-desktop"></i>
-                        <ul>
-                            <li> Built-in responsiveness</li>
-                            <li> Mobile first fluid grid</li>
-                            <li> Fits any screen sizes</li>
-                            <li> PC Tablet and Mobile</li>
-                        </ul>
+                    <div class="col-md-4">
+                        <div class="card text-center">
+                            <h3>Responsive</h3>
+                            <i class="fa fa-desktop large-icon"></i>
+                            <ul>
+                                <li> Built-in responsiveness</li>
+                                <li> Mobile first fluid grid</li>
+                                <li> Fits any screen sizes</li>
+                                <li> PC Tablet and Mobile</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="card col-sm-12 col-md-4 col-lg-4">
-                        <p>Responsive</p>
-                        <i class="fa fa-css3"></i>
-                        <ul>
-                            <li> Built-in responsiveness</li>
-                            <li> Mobile first fluid grid</li>
-                            <li> Fits any screen sizes</li>
-                            <li> PC Tablet and Mobile</li>
-                        </ul>
+                    <div class="col-md-4">
+                        <div class="card text-center">
+                            <h3>Responsive</h3>
+                            <i class="fa fa-css3 large-icon"></i>
+                            <ul>
+                                <li> Built-in responsiveness</li>
+                                <li> Mobile first fluid grid</li>
+                                <li> Fits any screen sizes</li>
+                                <li> PC Tablet and Mobile</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="card box col-sm-12 col-md-4 col-lg-4">
-                        <p>Responsive</p>
-                        <i class="fa fa-diamond"></i>
-                        <ul>
-                            <li> Built-in responsiveness</li>
-                            <li> Mobile first fluid grid</li>
-                            <li> Fits any screen sizes</li>
-                            <li> PC Tablet and Mobile</li>
-                        </ul>
+                    <div class="col-md-4">
+                        <div class="card text-center">
+                            <h3>Responsive</h3>
+                            <i class="fa fa-diamond large-icon"></i>
+                            <ul>
+                                <li> Built-in responsiveness</li>
+                                <li> Mobile first fluid grid</li>
+                                <li> Fits any screen sizes</li>
+                                <li> PC Tablet and Mobile</li>
+                            </ul>
+                        </div>
                     </div>  
                 </div>
             </div>
+            <hr>
+            <div class="container-fluid">
+                <h2 class="text-center">Color Classes </h2>
+                <div class="row">
+                    <span class="col-md-2 red">Red</span>
+                    <span class="col-md-2 blue">Blue</span>
+                    <span class="col-md-2 blue_gray">Blue Gray</span>
+                    <span class="col-md-2 teal">Teal</span>
+                    <span class="col-md-2 yellow">Yellow</span>
+                    <span class="col-md-2 orange">Orange</span>
+                </div>
+            </div>
+            <hr>
+            <div class="container-fluid">
+                <h2 class="text-center">Built-In Responsiveness</h2>
+                <p class="text-center"> Resize the page to see the effect</p>
+                <div class="row border">
+                    <div class="col-md-6 blue">
+                        w3-half
+                        The w3-half class uses half (50%) of the screen window.
+                        
+                        On small screens (max 600 pixels) it automatically resizes to full screen width.
+                    </div>
+                    <div class="col-md-6 white">White</div>
+                </div>
+                <div class="row border">
+                    <div class="col-md-4 green">
+                        w3-third
+                        The w3-third class uses one third (33.33%) of the screen widow.
+                        
+                        On small screens (max 600 pixels) it automatically resizes to full screen width.
+                    </div>
+                    <div class="col-md-4 white">White</div>
+                    <div class="col-md-4 white">White</div>
+                </div>
+                <div class="row border">
+                    <div class="col-md-3 red">
+                        w3-quarter
+                        The w3-quarter class uses one quarter (25%) of the screen window.
+                        
+                        On small screens (max 600 pixels) it automatically resizes to full screen width.    
+                    </div>
+                    <div class="col-md-3 white">White</div>
+                    <div class="col-md-3 white">White</div>
+                    <div class="col-md-3 white">White</div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <h2 class="text-center">Containers</h2>
+                <p class="text-center">User containers to create headers, sections and footers</p>
+                <div class="row header-tag">
+                    <h2 class="container-fluid">Header</h2>
+                </div>
+                <div class="header-tag-child">
+                    <p onclick="this.parentElement.style.display='none'" class=""><i class="fa fa-remove"></i></p>
+                    <h2 >London</h2>
+                    London is the capital city of England. It is the most populous city in the United Kingdom, with a metropolitan area of over 13 million inhabitants.
+                    
+                    Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.
+                    
+                    By the way, you can add a close icon to all containers if you want the ability to hide them. Look to your right!
+                </div>
+                <div class="row footer-tag">
+                    <div class="container-fluid">
+                        <h2>Footer</h2>
+                        <p>Footer information goes here</p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="">
+                <h2 class="text-center"> Color Themes </h2>
+                <p class="text-center">The color themes have been designed to work harmoniously with each other.</p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card box">
+                            <div class="blue"><h3>Them Indigo</h3></div>
+                            <div class="white"><h3>Movies 2014</h3></div>
+                            <hr>
+                            <div class="white">
+                                <h3>Frozen</h3>
+                                <p>The response to the animations was ridiculous</p>
+                            </div>
+                            <hr>
+                            <div class="white">
+                                <h3>Frozen</h3>
+                                <p>The response to the animations was ridiculous</p>
+                            </div>
+                            <hr>
+                            <div class="white">
+                                <h3>Frozen</h3>
+                                <p>The response to the animations was ridiculous</p>
+                            </div>
+                            <div class="blue"> Next </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card box">
+                            <div class="green"><h3>Them Indigo</h3></div>
+                            <div class="white"><h3>Movies 2014</h3></div>
+                            <hr>
+                            <div class="white">
+                                <h3>Frozen</h3>
+                                <p>The response to the animations was ridiculous</p>
+                            </div>
+                            <hr>
+                            <div class="white">
+                                <h3>Frozen</h3>
+                                <p>The response to the animations was ridiculous</p>
+                            </div>
+                            <hr>
+                            <div class="white">
+                                <h3>Frozen</h3>
+                                <p>The response to the animations was ridiculous</p>
+                            </div>
+                            <div class="green"> Next </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="">
+                <h2 class="text-center">Paper-like Cards with Shadows</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="border">
+                            <img class="card-img-top" src="img/car.jpg">
+                            <div class="card-body"> w3-card </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="border">
+                        <img class="card-img-top" src="img/car.jpg">
+                        <div class="card-body"> w3-card </div>
+                    </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="border">
+                            <img class="card-img-top" src="img/car.jpg">
+                            <div class="card-body"> w3-card </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="table-responsive">
+                <h2 class="text-center">Table</h2>
+                <table class="table">
+                    <thead class="thead">
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Point</th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td>Jill</td>
+                        <td>Smith</td>
+                        <td>50</td>
+                    </tr>
+                    <tr>
+                        <td>Jill</td>
+                        <td>Smith</td>
+                        <td>50</td>
+                    </tr>
+                    <tr>
+                        <td>Jill</td>
+                        <td>Smith</td>
+                        <td>50</td>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div class="">
+                <h2 class="text-center">Forms and Lists</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <!-- <div class=""> -->
+                            <form>
+                                <h2> Input Form</h2>
+                                <input type="text" name="name"><br>
+                                <label>Name</label><br>
+                                <input type="text" name="email"/><br>
+                                <label>Email</label><br>
+                                <input type="text" name="subject"/><br>
+                                <label>Subject</label><br>
+                                <div class="row">
+                                    <div class="col-md-6 drink">
+                                        <input type="checkbox" name="drink">
+                                        <label>Milk</label> <br>
+                                        <input type="checkbox" name="drink" checked> 
+                                        <label>Sugar</label> <br>
+                                        <input type="checkbox" name="drink" disabled>
+                                        <label >Lemon</label> <br>
+                                    </div>
+                                    <div class="col-md-6 sex">
+                                        <input type="radio" name="sex"> 
+                                        <label>Male</label> <br>
+                                        <input type="radio" name="sex" checked>
+                                        <label>Female</label> <br>
+                                        <input type="radio" name="sex" disabled>
+                                        <label>Don't know</label> <br>
+                                    </div>
+                                </div>
+                            </form>
+                        <!-- </div> -->
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="list">
+                            <h2>Lists</h2>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item" style="border-top:0">Jill</li>
+                                <li class="list-group-item">Eve</li>
+                                <li class="list-group-item" style="border-bottom:0">Adam</li>
+                            </ul>
+                            <ul class="list-group list-group border">
+                                <li class="list-group-item active">Jill</li>
+                                <li class="list-group-item">Eve</li>
+                                <li class="list-group-item">Adam</li>
+                                <li class="list-group-item">Steve</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="container-fluid">
+                <div class="progress">
+                    <span class="progress-bar">0</span>
+                </div>
+                <button>Click me</button>
+            </div>
+            <hr>
+            <div class="">
+                <h2>Slideshows</h2>
+                <div>
+                    <img src="img/snow.jpg">
+                    <img src="img/forest.jpg">
+                    <img src="img/lights.jpg">
+                    <img src="img/mountains.jpg">
+                </div>
+            </div>
+            <hr>
+            <div class="">
+                <h2>Navigation</h2>
+                <nav class="navbar navbar-expand-sm bg-dark">
+                    <div class="navbar-nav">
+                        <a href="#" class="navbar-item">Home</a>
+                        <a href="#" class="navbar-item">Home</a>
+                        <!-- <a href="#" class="navbar-item btn">Home</a> -->
+                        <div class="nav-item dropdown">
+                            <a href="#" class="navbar-item dropdown-toggle" data-toggle="dropdown">Home</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Link 1</a>
+                                <a class="dropdown-item" href="#">Link 2</a>
+                                <a class="dropdown-item" href="#">Link 3</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <button type="" class="btn btn-success nav-item">Home</button> -->
+                    <!-- <button type="" class="btn btn-success nav-item">Home</button> -->
+                    
+                </nav>
+            </div>
+            <hr>
+            <div class="">
+                <h2>Accordians</h2>
+                <button class="btn btn-block" data-target="#collapse1" data-toggle="collapse">Open Section 1</button>
+                <div class="collapse hide container-fluid" id="collapse1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                <button class="btn btn-block" data-target="#collapse2" data-toggle="collapse">Open Section 2</button>
+                <ul class="collapse hide container-fluid" id="collapse2">
+                    <li>Link 1</li>
+                    <li>Link 2</li>
+                    <li>Link 3</li>
+                </ul>
+                <button class="btn btn-block" data-target="#collapse3" data-toggle="collapse">Open Section 3</button>
+                <div class="collapse hide container-fluid" id="collapse3">
+                    <p> Accordion with Images:</p>
+                    <img src="img/snow.jpg">
+                    <p>French Alpa</p>
+                </div>
+            </div>
+            <hr>
+            <div>
+                <h2>Tabs</h2>
+                <div class="navbar navbar-expand-sm bg-dark">
+                    <div class="navbar-nav">
+                        <a href="#" class="navbar-item">Home</a>
+                        <a href="#" class="navbar-item">Home</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="navbar-item dropdown-toggle" data-toggle="dropdown">Home</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Link 1</a>
+                                <a class="dropdown-item" href="#">Link 2</a>
+                                <a class="dropdown-item" href="#">Link 3</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="row footer">
-        </div>
+        <!-- <div class="row footer">
+        </div> -->
     </div>
 </body>
 </html>
