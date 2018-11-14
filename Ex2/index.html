@@ -13,7 +13,7 @@
 </head>
 <body>
     <div class="container-fluid" width="100%">
-        <div class="row header">
+        <div class="row header" id="myHeader">
             <div class="container-fluid">
                 <span class="side-navigation">&#9776;</span>
                 <div class="text-center">
@@ -294,10 +294,9 @@
             <div class="progressParent">
                 <h2 class="text-center">Progress Bars</h2>
                 <div class="progress">
-                    <span id="myProgressBar" class="progress-bar" aria-valuemax="100" aria-valuemin="5"
-                    aria-valuenow="5" style="width:5%">5%</span>
+                    <span id="myProgressBar" class="myProgressBar" style="width:5%">5%</span>
                 </div>
-                <button type="button" class="clickme">Click me</button>
+                <button type="button" class="clickme" onclick="move()">Click me</button>
             </div>
             <hr>
             <div  class="text-center">
@@ -377,7 +376,7 @@
                     <li class="nav-item"><a data-toggle="tab" class="nav-link" href="#Paris">Paris</a></li>
                     <li class="nav-item"><a data-toggle="tab" class="nav-link" href="#Tokyo">Tokyo</a></li>
                 </ul>
-                <div class="tab-content border ">
+                <div class="tab-content">
                     <div class="container-fluid tab-pane active" id="London">
                         <h2>London</h2>
                         <p>London is the capital city of England. 
@@ -405,12 +404,58 @@
                 <button class="btn btn-custom">Button</button>
                 <button class="btn btn-custom disabled">Button</button>
             </div>
-            <div>
-
+            <div class="button-circle text-center">
+                <button type="button" class="btn btn-circle btn-circle1"><i class="fa fa-plus"></i></button>
+                <button type="button" class="btn btn-circle btn-circle2"><i class="fa fa-plus"></i></button>
+                <button type="button" class="btn btn-circle btn-circle3"><i class="fa fa-plus"></i></button>
+            </div>
+            <hr>
+            <div class="text-center">
+                <h2>Pagination</h2>
+                <ul class="pagination justify-content-center">
+                    <li class="page-item"><a class="page-link" href="">«</a></li>
+                    <li class="page-item"><a class="page-link active" href="">1</a></li>
+                    <li class="page-item"><a class="page-link" href="">2</a></li>
+                    <li class="page-item"><a class="page-link" href="">3</a></li>
+                    <li class="page-item"><a class="page-link" href="">»</a></li>
+                </ul>
             </div>
         </div>
-        <!-- <div class="row footer">
-        </div> -->
+        <div class="row footer">
+            <p>
+                Here is footer
+            </p>
+            <a href="#myHeader" data-toggle="tooltip" data-placement="left" 
+            class="tooltip-custom" title="Text">
+                <i class="fa fa-chevron-circle-up"></i></a>
+            <!-- Generated markup by the plugin -->
+            <!-- <div class="tooltip bs-tooltip-top" role="tooltip">
+                <div class="arrow"></div>
+                <div class="tooltip-inner" >
+                    Go to Top ahihi
+                </div>
+            </div> -->
+        </div>
     </div>
+<script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();   
+    });
+
+    function move(){
+        var elem = document.getElementById("myProgressBar");
+        var width = 5;
+        var id = setInterval(frame, 10);
+        function frame() {
+            if (width >= 100) {
+                clearInterval(id);
+            } else {
+                width++; 
+                elem.style.width = width + '%'; 
+                elem.innerHTML = width + '%';
+            }
+        }
+    }
+</script>
 </body>
 </html>
