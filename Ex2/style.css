@@ -8,6 +8,26 @@
     font-size:1.5em;
     margin-top: 20px;
 }
+.mySideNavigation{
+    height:100%;
+    width:0;
+    position:fixed;
+    top:0;
+    left:0;
+    overflow-x: hidden;
+    background-color: #333;
+    z-index: 1;
+    transition: 0.5s;
+    padding-top:10px;
+}
+.mySideNavigation li a{
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
 .header h1{
     margin-bottom: 40px;
 }
@@ -17,6 +37,9 @@
     padding: 10px;
     color: white;
     font-weight: bold;
+}
+.modal{
+    color: #111;
 }
 .header button:hover{
     background-color: teal;

@@ -14,12 +14,42 @@
 <body>
     <div class="container-fluid" width="100%">
         <div class="row header" id="myHeader">
+            <div id="mySideNavigation" class="mySideNavigation" >
+                <ul>
+                    <li><a href="javascript:void(0)" onclick="closeNav()">Close&times;</a></li>
+                    <li><a href="">Link1</a></li>
+                    <li><a href="">Link2</a></li>
+                </ul>
+            </div>
             <div class="container-fluid">
-                <span class="side-navigation">&#9776;</span>
+                <span class="side-navigation" onclick="openNav()">&#9776;</span>
                 <div class="text-center">
                     <p>BEAUTIFUL RESPONSIVE WEB SITES</p>
                     <h1>BUILT WITH BOOTSTRAP</h1>
-                    <button >LEARN CSS</button>
+                    <button type="button" data-toggle="modal" data-target="#myModal">LEARN CSS</button>
+                    <!-- The Modal -->
+                    <div class="modal fade" id="myModal">
+                        <div class="modal-dialog">
+                        <div class="modal-content">
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                            <h4 class="modal-title">Modal Heading</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                            Modal body..
+                            </div>
+                            
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+                            
+                        </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>      
@@ -437,6 +467,7 @@
             </div> -->
         </div>
     </div>
+    
 <script>
     $(document).ready(function(){
         $('[data-toggle="tooltip"]').tooltip();   
@@ -455,6 +486,12 @@
                 elem.innerHTML = width + '%';
             }
         }
+    }
+     function openNav(){
+        document.getElementById("mySideNavigation").style.width= "250px";
+    }
+    function closeNav(){
+        document.getElementById("mySideNavigation").style.width= "0";
     }
 </script>
 </body>
