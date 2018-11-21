@@ -1,0 +1,23 @@
+<!-- ngSwitch-Case -->
+<ul class="nav nav-pills">
+  <li class="nav-item">
+    <a class="nav-link" [class.active]="viewMode == 'map'" (click)="viewMode = 'map'">Map View</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [class.active]="viewMode == 'list'" (click)="viewMode = 'list'">List View</a>
+  </li>
+</ul>
+<div [ngSwitch]="viewMode">
+  <div *ngSwitchCase="'map'"> Map View Content</div>
+  <div *ngSwitchCase="'list'"> List View Content</div>
+  <div *ngSwitchDefault>Otherwise</div>
+</div>
+<!-- ngFor -->
+<button (click)="loadCourses()">Load Courses</button>
+<ul>
+  <button (click)="onAdd()">Add</button>
+  <li *ngFor="let course of courses; trackBy: trackCourses">
+     {{course.id}}: {{course.name}} 
+    <button (click)="onRemove(course)">Remove</button>
+  </li>
+</ul>
