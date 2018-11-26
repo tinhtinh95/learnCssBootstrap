@@ -13,10 +13,10 @@ import { BadInputError } from '../common/bad-input-error';
 export class DataService {
   constructor(private url: string, private http: Http) {
   }
-  getAll(){
+  getAll() {
     return this.http.get(this.url)
         .pipe(map(response => response.json()))
-        .pipe(catchError(this.handlerError));;
+        .pipe(catchError(this.handlerError));
   }
   create(resourse) {
     // return throwError(new AppError());
@@ -32,7 +32,7 @@ export class DataService {
   }
   delete(id) {
     // return throwError(new AppError());
-    return this.http.delete(this.url+'/'+id)
+    return this.http.delete(this.url + '/' + id)
         .pipe(map(response => response.json()))
         .pipe(catchError(this.handlerError));
   }

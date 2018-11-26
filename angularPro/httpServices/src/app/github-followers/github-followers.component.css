@@ -1,0 +1,13 @@
+.list-group-item {
+    border: none;
+    display: block;
+    padding: 0;
+    margin:10px 0 10px;
+  }
+  .list-group-item div img {
+    float: left;
+    margin-right: 20px;
+  }
+  .list-group-item div.title {
+    float: left;
+  }

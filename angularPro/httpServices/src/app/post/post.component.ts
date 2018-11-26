@@ -9,9 +9,8 @@ import { BadInputError } from '../common/bad-input-error';
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.css']
 })
-export class PostComponent implements OnInit{
+export class PostComponent implements OnInit {
   posts: any;
- 
   constructor(private service: PostService) {
   }
 
@@ -20,34 +19,34 @@ export class PostComponent implements OnInit{
       .subscribe(posts => this.posts = posts);
   }
 
-  createPost(input: HTMLInputElement){
-    let post= {title: input.value}; // them vao xong roi goi service
+  createPost(input: HTMLInputElement) {
+    let post = {title: input.value}; // them vao xong roi goi service
     this.posts.splice(0, 0, post);
     input.value = '';
 
     this.service.create(post)
     .subscribe(newPost => { // goi service de tranh thoi gian delay
       post['id'] = newPost.id;
-      // this.posts.splice(0, 0, post); 
+      // this.posts.splice(0, 0, post);
       // console.log(newPost)
     },
     (err: AppError) => {
-      this.posts.splice(0,1); // neu co loi thi them vao xong roi xoa
+      this.posts.splice(0, 1); // neu co loi thi them vao xong roi xoa
 
-      if(err instanceof BadInputError){
+      if (err instanceof BadInputError) {
         // alert("This post has already deleted");
-      }else{
+      } else {
         throw err;
       }
-    })
+    });
   }
   updatePost(post){
     this.service.update(post.id)
       .subscribe(updatedPost => {
-        console.log(updatedPost)
-      })
+        console.log(updatedPost);
+      });
   }
-  deletePost(post){
+  deletePost(post) {
     let index = this.posts.indexOf(post);
     this.posts.splice(index, 1);
 
@@ -57,11 +56,11 @@ export class PostComponent implements OnInit{
       (err: AppError) => {
         this.posts.splice(index, 0, post);
 
-        if(err instanceof NotFoundError){
-          alert("This post has already deleted");
-        }else{
+        if (err instanceof NotFoundError) {
+          alert('This post has already deleted');
+        } else {
           throw err;
         }
-      })
+      });
   }
 }
