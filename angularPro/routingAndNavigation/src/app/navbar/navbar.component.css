@@ -1,0 +1,29 @@
+ul{
+    list-style-type: none;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    background-color: teal
+}
+ul li {
+    margin-right: 0;
+}
+ul li a:not(:last-child){
+    float: left;
+}
+ul li a{
+    color: white;
+    padding: 15px;
+    display: block;
+    text-decoration: none;
+}
+ul li a:hover{
+    color:white;
+    background-color: #333;
+    text-decoration: none;
+}
+.active {
+    background-color: darkgreen;
+
+}
+
