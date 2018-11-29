@@ -5,12 +5,12 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: 'AIzaSyCxDd0HF9o7nfiXePZ23dWQygqGl3IZ048',
-    authDomain: 'oshop-320dd.firebaseapp.com',
-    databaseURL: 'https://oshop-320dd.firebaseio.com',
-    projectId: 'oshop-320dd',
-    storageBucket: 'oshop-320dd.appspot.com',
-    messagingSenderId: '1043082375113'
+    apiKey: 'AIzaSyCBevMPB9hPOocMp74fZSi-wGVVUl10M9A',
+    authDomain: 'shop-of-tina.firebaseapp.com',
+    databaseURL: 'https://shop-of-tina.firebaseio.com',
+    projectId: 'shop-of-tina',
+    storageBucket: '',
+    messagingSenderId: '561026855649'
   }
 };
 
