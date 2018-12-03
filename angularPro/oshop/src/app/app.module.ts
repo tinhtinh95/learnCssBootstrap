@@ -7,7 +7,6 @@ import { environment } from './../environments/environment';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CustomFormsModule } from 'ng2-validation';
-// import { DataTableModule } from 'angular5-data-table';
 import {DataTableModule} from 'angular-6-datatable';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -30,6 +29,9 @@ import { ProductFormComponent } from './admin/product-form/product-form.componen
 import { FormsModule } from '@angular/forms';
 import { ProductFilterComponent } from './products/product-filter/product-filter.component';
 import { ProductCardComponent } from './product-card/product-card.component';
+import { CategoryService } from './category.service';
+import { ProductService } from 'src/app/product.service';
+import { ShoppingCartService } from 'src/app/shopping-cart.service';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,7 @@ import { ProductCardComponent } from './product-card/product-card.component';
     ProductCardComponent,
   ],
   imports: [
-BrowserModule,
+  BrowserModule,
     AppRoutingModule,
     FormsModule,
     CustomFormsModule, // validate
@@ -76,6 +78,9 @@ BrowserModule,
     AuthService,
     AuthGuardService,
     UserService,
+    CategoryService,
+    ProductService,
+    ShoppingCartService,
     AdminAuthGuardService
   ],
   bootstrap: [AppComponent]
