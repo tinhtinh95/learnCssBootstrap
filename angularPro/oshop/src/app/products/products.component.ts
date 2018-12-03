@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { CategoryService } from '../category.service';
+import { ProductService } from '../product.service';
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { Product } from '../models/product';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-products',
@@ -7,7 +13,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
 
-  constructor() { }
+  categories$;
+  products: Product[] = [];
+  filterProducts: Product[] = [];
+  subcription: Subscription;
+  category: string;
+
+  constructor(private catService: CategoryService, private productService: ProductService, route: ActivatedRoute) {
+    this.categories$ = this.catService.getListCategories();
+    
+    // cach 1: Dung 2 subscribe
+    // this.subcription = this.productService.getAll().subscribe((products: Product[]) => {
+    //   this.filterProducts = this.products = products;
+    //   route.queryParamMap.subscribe(params => {
+    //     this.category = params.get('category');
+    //     this.products = (this.category) ?
+    //       this.filterProducts.filter(p => p.value['category'] === this.category) :
+    //       this.filterProducts;
+    //   });
+    // });
+
+    // thay bang switchMap
+    this.subcription = this.productService.getAll()
+      .pipe(switchMap((products: Product[]) => {
+      this.filterProducts = this.products = products;
+      return route.queryParamMap; }))
+      .subscribe(params => {
+        this.category = params.get('category');
+        this.products = (this.category) ?
+          this.filterProducts.filter(p => p.value['category'] === this.category) :
+          this.filterProducts;
+      });
+  }
 
   ngOnInit() {
   }

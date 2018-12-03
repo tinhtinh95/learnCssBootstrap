@@ -10,7 +10,7 @@ export class CategoryService {
 
   constructor(private db: AngularFireDatabase) { }
   getListCategories() {
-    return this.db.list('/categories',ref=>ref.orderByChild('name')).snapshotChanges().pipe(
+    return this.db.list('/categories', ref => ref.orderByChild('name')).snapshotChanges().pipe(
       map(changes =>
         changes.map(el => ({ key: el.payload.key, value: el.payload.val() }))
       )
