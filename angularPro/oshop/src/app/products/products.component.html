@@ -3,23 +3,10 @@
     <app-product-filter [category]="category"></app-product-filter>
   </div>
   <div class="col-md-9">
-    <div class="row">
-      <ng-container *ngFor="let product of products; let i = index" >
-        <div class="col-sm-6"> 
-          <div class="card" *ngIf="product.value.title" >
-            <img class="card-img-top" *ngIf="product.value.imageUrl" [src]="product.value.imageUrl">
-            <div class="card-body">
-              <h5 class="card-title">{{ product.value.title }}</h5>
-              <p class="card-text">{{ product.value.price | currency: 'USD' }}</p>
-            </div>
-            <hr>
-            <div class="card-body">
-              <a href="" class="btn btn-primary">Add to cart</a>
-            </div>
-          </div>
-        </div>
-         <!-- <div *ngIf="(i+2) % 2 === 0" class="w-100"></div>  -->
-      </ng-container>
+    <div class="row row-flex">
+      <div *ngFor="let product of products; let i = index"  class="col-sm-6"> 
+        <app-product-card [product]="product.value"></app-product-card>
+      </div>
     </div>
   </div>
 </div>

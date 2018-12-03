@@ -6,15 +6,11 @@ import { CategoryService } from '../../category.service';
   templateUrl: './product-filter.component.html',
   styleUrls: ['./product-filter.component.css']
 })
-export class ProductFilterComponent implements OnInit {
+export class ProductFilterComponent {
   categories$;
   @Input('category') category;
 
   constructor(private catService: CategoryService) {
     this.categories$ = this.catService.getListCategories();
   }
-
-  ngOnInit() {
-  }
-
 }

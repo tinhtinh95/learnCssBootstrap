@@ -18,7 +18,6 @@ export class ProductsComponent implements OnInit {
   category: string;
 
   constructor(private productService: ProductService, route: ActivatedRoute) {
-    
     // cach 1: Dung 2 subscribe
     // this.subcription = this.productService.getAll().subscribe((products: Product[]) => {
     //   this.filterProducts = this.products = products;
