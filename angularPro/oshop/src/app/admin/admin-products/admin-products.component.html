@@ -3,7 +3,7 @@
 </div>
 <input #query (keyup)="filter(query.value)" type="text" name="search" placeholder="Search..." class="form-control">
 <div>
-  <table class="table">
+  <!-- <table class="table">
     <thead>
       <tr>
         <th scope="col">Title</th>
@@ -20,38 +20,72 @@
           <a (click)="delete(product.key)">Delete</a>
         </td>
       </tr>
+  </table> -->
+
+  <table class="table" [mfData]="products$" #mf="mfDataTable" [mfRowsOnPage]="5">
+      <thead>
+      <tr>
+          <th style="width: 20%">
+            <mfDefaultSorter by="title">Title</mfDefaultSorter>
+          </th>
+          <th style="width: 50%">
+            <mfDefaultSorter by="price">Price</mfDefaultSorter>
+          </th>
+          <th>
+            Option
+          </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let product of mf.data">
+          <td>{{product.value.title}}</td>
+          <td>{{product.value.price}}</td>
+          <td>
+            <a [routerLink]="['/admin/products/', product.key]">Edit</a> /
+            <a (click)="delete(product.key)">Delete</a>
+          </td>
+      </tr>
+      </tbody>
+      <tfoot>
+      <tr>
+          <td colspan="4">
+              <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+          </td>
+      </tr>
+      </tfoot>
   </table>
+
   <!-- <data-table
-    [item] = "items"
+    [items] = "items"
     [itemCount] = "itemCount"
-    (reload) = reloadItems($event)
+
   >
   <data-table-column 
-    [property] = "title"
+    [property] = "'title'"
     [header] = "'Title'" 
     [sortable] = true
     [resizable] = true
   >
   </data-table-column>
   <data-table-column 
-    [property] = "price"
+    [property] = "'price'"
     [header] = "'Price'" 
     [sortable] = true
     [resizable] = true
   >
-  <ng-template #dataTableCell let-item="product">
-    {{ product.price | currency: 'USD'}}
+  <ng-template #dataTableCell let-item="item">
+    {{ item.value.title | currency: 'USD'}}
   </ng-template>
   </data-table-column>
 
   <data-table-column 
-    [property] = "key"
+    [property] = "'key'"
   >
   <ng-template #dataTableCell let-item="product">
-   
+    <a [routerLink]="['/admin/products/', item.key]">Edit</a> /
+    <a (click)="delete(item.key)">Delete</a>
   </ng-template>
   </data-table-column>
-    <a [routerLink]="['/admin/products/', product.key]">Edit</a> /
-    <a (click)="delete(product.key)">Delete</a>
   </data-table> -->
+
 </div>

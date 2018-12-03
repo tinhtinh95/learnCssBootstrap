@@ -12,10 +12,14 @@ export class AppComponent {
   title = 'oshop';
   constructor(private service: AuthService, private router: Router, private userService: UserService) {
     service.user$.subscribe(user => {
+      if (!user) { return; }
       if (user) {
         userService.save(user);
         let returnUrl = localStorage.getItem('returnUrl');
-        console.log(user, returnUrl);
+        if (!returnUrl) {
+          return;
+        }
+        localStorage.removeItem('returnUrl');
         router.navigateByUrl(returnUrl);
       }
     });

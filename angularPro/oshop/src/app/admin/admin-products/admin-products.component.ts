@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ProductService } from 'src/app/product.service';
 import { Subscription, Observable } from 'rxjs';
 import { Product } from 'src/app/models/product';
+import { DataTableResource } from 'angular5-data-table';
 
 @Component({
   selector: 'app-admin-products',
@@ -15,17 +16,8 @@ export class AdminProductsComponent implements OnInit, OnDestroy {
   subsciption: Subscription;
 
   constructor(private productService: ProductService) {
-    this.subsciption = this.productService.getAll().subscribe(products => {
-      this.productsFilter = this.products$ = products.map(product => {
-        return <Product>{
-          id: product.key,
-          title: product.value['title'],
-          price: product.value['price'],
-          category: product.value['category'],
-          imageUrl: product.value['imageUrl']
-        }
-      })
-      
+    this.subsciption = this.productService.getAll().subscribe((products: Product[]) => {
+      this.productsFilter = this.products$ = products;
     });
   }
   ngOnInit() {}
@@ -40,8 +32,8 @@ export class AdminProductsComponent implements OnInit, OnDestroy {
     console.log(query);
   }
 
-  delete(productId){
-    if(confirm('Are you sure to delete this item')){
+  delete(productId) {
+    if (confirm('Are you sure to delete this item')) {
       this.productService.delete(productId);
     }
   }
