@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { CategoryService } from '../category.service';
 import { ProductService } from '../product.service';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -13,14 +12,12 @@ import { switchMap } from 'rxjs/operators';
 })
 export class ProductsComponent implements OnInit {
 
-  categories$;
   products: Product[] = [];
   filterProducts: Product[] = [];
   subcription: Subscription;
   category: string;
 
-  constructor(private catService: CategoryService, private productService: ProductService, route: ActivatedRoute) {
-    this.categories$ = this.catService.getListCategories();
+  constructor(private productService: ProductService, route: ActivatedRoute) {
     
     // cach 1: Dung 2 subscribe
     // this.subcription = this.productService.getAll().subscribe((products: Product[]) => {

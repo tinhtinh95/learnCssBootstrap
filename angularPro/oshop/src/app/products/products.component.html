@@ -1,17 +1,6 @@
 <div class="row container-fuild">
-  <div class="list-group col-md-3">
-    <a
-      routerLink="/"
-      [class.active] = "!category"
-      class="list-group-item list-group-item-action"
-      > All categories</a>
-    <a
-      *ngFor="let cat of categories$ | async" 
-      routerLink="/"
-      [queryParams] = "{category: cat.key}"
-      class="list-group-item list-group-item-action"
-      [class.active] = "category === cat.key"
-      >{{ cat.value.name }}</a>
+  <div class=" col-md-3">
+    <app-product-filter [category]="category"></app-product-filter>
   </div>
   <div class="col-md-9">
     <div class="row">
