@@ -1,8 +1,9 @@
-<div class="card h-100" *ngIf="product.title" >
-  <img class="card-img-top h-50" *ngIf="product.imageUrl" [src]="product.imageUrl" alt={{product.title}}>
+<div class="card h-100" *ngIf="product.title || product.value.title" >
+  <img class="card-img-top h-50" *ngIf="product.imageUrl || product.value.imageUrl" [src]="product.imageUrl || product.value.imageUrl" 
+    alt="{{product.title || product.value.title}}">
   <div class="card-body">
-    <h5 class="card-title">{{ product.title }}</h5>
-    <p class="card-text">{{ product.price | currency: 'USD' }}</p>
+    <h5 class="card-title">{{ product.title || product.value.title }}</h5>
+    <p class="card-text">{{ (product.price || product.value.price) | currency: 'USD' }}</p>
   </div>
   <div *ngIf="showActions" style="padding: 0">
     <button
