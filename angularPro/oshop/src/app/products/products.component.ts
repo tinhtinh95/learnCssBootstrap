@@ -37,7 +37,7 @@ export class ProductsComponent implements OnInit {
       .subscribe(params => {
         this.category = params.get('category');
         this.products = (this.category) ?
-          this.filterProducts.filter(p => p.value['category'] === this.category) :
+          this.filterProducts.filter(p => p.category === this.category) :
           this.filterProducts;
       });
   }

@@ -15,7 +15,7 @@ export class ProductFormComponent implements OnInit {
   id; //if update
 
   constructor(
-    private catService: CategoryService, 
+    private catService: CategoryService,
     private productService: ProductService,
     private router: Router,
     private route: ActivatedRoute) {

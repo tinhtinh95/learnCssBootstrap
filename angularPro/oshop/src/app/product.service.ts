@@ -11,10 +11,11 @@ export class ProductService {
 
   getAll() {
     return this.db.list('/products').snapshotChanges().pipe(
-      map(changes =>
-        changes.map(el => ({ key: el.payload.key, value: el.payload.val() }))
-      )
-    );
+      map(actions => actions.map(a => {
+        const data = a.payload.val();
+        const key = a.payload.key;
+        return { key, ...data };
+      })));
   }
   create(product) {
     return this.db.list('/products').push(product);

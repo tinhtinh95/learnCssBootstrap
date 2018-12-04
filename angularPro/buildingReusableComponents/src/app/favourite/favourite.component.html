@@ -1,0 +1,13 @@
+<a  (click)="onClick()">
+  <span style="font-size: 50px; padding: 30px" 
+  [ngClass]= "{'fa': true,  'fa-star-o': !isFavourite , 'fa-star': isFavourite }"> </span>
+</a>
+<span class="fa"
+[class.fa-star]="isSelected"
+[class.fa-star-o]="!isSelected"
+(click)="onClick()"
+style="font-size: 50px; padding: 30px"
+>
+
+</span>
+<!-- <button class="btn btn-primary">save me</button> -->

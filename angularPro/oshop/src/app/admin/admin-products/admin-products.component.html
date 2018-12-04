@@ -38,8 +38,8 @@
       </thead>
       <tbody>
       <tr *ngFor="let product of mf.data">
-          <td>{{product.value.title}}</td>
-          <td>{{product.value.price}}</td>
+          <td>{{product.title}}</td>
+          <td>{{product.price}}</td>
           <td>
             <a [routerLink]="['/admin/products/', product.key]">Edit</a> /
             <a (click)="delete(product.key)">Delete</a>
@@ -54,38 +54,4 @@
       </tr>
       </tfoot>
   </table>
-
-  <!-- <data-table
-    [items] = "items"
-    [itemCount] = "itemCount"
-
-  >
-  <data-table-column 
-    [property] = "'title'"
-    [header] = "'Title'" 
-    [sortable] = true
-    [resizable] = true
-  >
-  </data-table-column>
-  <data-table-column 
-    [property] = "'price'"
-    [header] = "'Price'" 
-    [sortable] = true
-    [resizable] = true
-  >
-  <ng-template #dataTableCell let-item="item">
-    {{ item.value.title | currency: 'USD'}}
-  </ng-template>
-  </data-table-column>
-
-  <data-table-column 
-    [property] = "'key'"
-  >
-  <ng-template #dataTableCell let-item="product">
-    <a [routerLink]="['/admin/products/', item.key]">Edit</a> /
-    <a (click)="delete(item.key)">Delete</a>
-  </ng-template>
-  </data-table-column>
-  </data-table> -->
-
 </div>
