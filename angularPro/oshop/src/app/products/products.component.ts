@@ -20,18 +20,6 @@ export class ProductsComponent implements OnInit, OnDestroy {
   cart: any;
 
   constructor(private productService: ProductService, route: ActivatedRoute, private shoppingCartService: ShoppingCartService) {
-    // cach 1: Dung 2 subscribe
-    // this.subcription = this.productService.getAll().subscribe((products: Product[]) => {
-    //   this.filterProducts = this.products = products;
-    //   route.queryParamMap.subscribe(params => {
-    //     this.category = params.get('category');
-    //     this.products = (this.category) ?
-    //       this.filterProducts.filter(p => p.value['category'] === this.category) :
-    //       this.filterProducts;
-    //   });
-    // });
-
-    // thay bang switchMap
     this.subcription = this.productService.getAll()
       .pipe(switchMap((products: Product[]) => {
       this.filterProducts = this.products = products;
@@ -48,6 +36,7 @@ export class ProductsComponent implements OnInit, OnDestroy {
     this.subcription = (await this.shoppingCartService.getCart())
       .subscribe(cart => {
         this.cart = cart;
+        // console.log(cart)
       });
   }
 
@@ -56,3 +45,15 @@ export class ProductsComponent implements OnInit, OnDestroy {
   }
 
 }
+// cach 1: Dung 2 subscribe
+    // this.subcription = this.productService.getAll().subscribe((products: Product[]) => {
+    //   this.filterProducts = this.products = products;
+    //   route.queryParamMap.subscribe(params => {
+    //     this.category = params.get('category');
+    //     this.products = (this.category) ?
+    //       this.filterProducts.filter(p => p.value['category'] === this.category) :
+    //       this.filterProducts;
+    //   });
+    // });
+
+    // thay bang switchMap
