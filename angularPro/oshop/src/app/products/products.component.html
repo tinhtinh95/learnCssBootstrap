@@ -5,7 +5,7 @@
   <div class="col-md-9">
     <div class="row row-flex">
       <div *ngFor="let product of products; let i = index"  class="col-sm-6"> 
-        <app-product-card [product]="product"></app-product-card>
+        <app-product-card [product]="product" [shopping-cart] = "cart"></app-product-card>
       </div>
     </div>
   </div>
