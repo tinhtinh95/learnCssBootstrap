@@ -26,6 +26,7 @@ export class ShoppingCartService {
         const key = action.key;
         const items = action.payload.val().items;
         return new ShoppingCart(items);
+        
       })
     );
     return cart;
