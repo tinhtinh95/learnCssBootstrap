@@ -62,4 +62,8 @@ export class ShoppingCartService {
       itemTmp.update({ product: product, quantity: (item ? item['quantity'] : 0) + num });
     });
   }
+  async clearCart() {
+    const cartId = await this.getOrCreateCartId();
+    const cart = this.db.object('/shopping-carts/' + cartId).remove();
+  }
 }
