@@ -23,10 +23,12 @@ export class ShoppingCartService {
     const cartId = await this.getOrCreateCartId();
     const cart = this.db.object('/shopping-carts/' + cartId).snapshotChanges().pipe(
       map((action: any) => {
-        const key = action.key;
-        const items = action.payload.val().items;
-        return new ShoppingCart(items);
-        
+        if (action.payload.val()) {
+          const key = action.key;
+          const items = action.payload.val().items;
+          return new ShoppingCart(items);
+        }
+        return null;
       })
     );
     return cart;
@@ -57,7 +59,7 @@ export class ShoppingCartService {
     const itemTmp = this.getItem(cartId, product.key);
     const item$ = itemTmp.valueChanges();
     item$.pipe(take(1)).subscribe(item => {
-      itemTmp.update({ product: product, quantity: item['quantity'] + num });
+      itemTmp.update({ product: product, quantity: (item ? item['quantity'] : 0) + num });
     });
   }
 }
