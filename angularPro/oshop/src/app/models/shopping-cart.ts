@@ -20,10 +20,11 @@ export class ShoppingCart {
     get totalPrice() {
         let sum = 0;
         for (const productId of Object.keys(this.itemsMap)) {
-            sum += this.itemsMap[productId].quantity;
+            sum += (this.itemsMap[productId].quantity * this.itemsMap[productId].product.price);
         }
         return sum;
     }
+
 
     getQuantity(product: Product) {
         // if (!this.shoppingCart) {
