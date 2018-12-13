@@ -1,15 +1,54 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ShoppingCartService } from '../shopping-cart.service';
+import { ShoppingCart } from '../models/shopping-cart';
+import { Subscription, iif } from 'rxjs';
+import { OrderService } from '../order.service';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-check-out',
   templateUrl: './check-out.component.html',
   styleUrls: ['./check-out.component.css']
 })
-export class CheckOutComponent implements OnInit {
+export class CheckOutComponent implements OnInit, OnDestroy {
 
-  constructor() { }
+  shipping = {};
+  cart: ShoppingCart;
+  userId: string;
+  cartSubscription: Subscription;
+  userSubscription: Subscription;
 
-  ngOnInit() {
+  constructor(
+    private authService: AuthService,
+    private orderService: OrderService,
+    private shoppingCartservice: ShoppingCartService) { }
+  async ngOnInit() {
+    const cart$ = await this.shoppingCartservice.getCart();
+    this.cartSubscription = cart$.subscribe(cart => this.cart = cart);
+    this.authService.user$.subscribe(user => this.userId = user.uid);
   }
-
+  async ngOnDestroy() {
+    this.cartSubscription.unsubscribe();
+    this.userSubscription.unsubscribe();
+  }
+  placeOrder() {
+    console.log(this.shipping);
+    const order = {
+      userId: this.userId,
+      datePlaced: new Date().getTime(),
+      shipping: this.shipping,
+      items: this.cart.items.map( i => {
+        return {
+          product: {
+            title: i.product.title,
+            imageUrl: i.product.imageUrl,
+            price: i.product.price
+          },
+          quantity: i.quantity,
+          totalPrice: i.totalPrice
+        };
+      })
+    };
+    this.orderService.storeOrder(order);
+  }
 }

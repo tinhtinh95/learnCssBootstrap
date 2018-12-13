@@ -30,6 +30,11 @@
       </tr>
     </tfoot>
   </table>
+  <a
+    *ngIf="cart.items.length" 
+    routerLink="/check-out"
+    class="btn btn-info"
+  >Check Out</a>
   <button 
     (click)="clearCart()" 
     class="btn btn-danger"> Clear Shopping Cart </button>
