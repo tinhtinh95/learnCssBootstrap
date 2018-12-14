@@ -12,3 +12,6 @@ div a:hover {
 div a {
     list-style: none;
 }
+.col-md-3 {
+    padding-left: 0
+}
