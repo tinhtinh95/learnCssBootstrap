@@ -5,7 +5,7 @@ import { Subscription, iif } from 'rxjs';
 import { OrderService } from 'shared/services/order.service';
 import { AuthService } from 'shared/services/auth.service';
 import { Router } from '@angular/router';
-import { Order } from '../shared/models/order';
+import { Order } from '../../../shared/models/order';
 
 @Component({
   selector: 'app-check-out',
