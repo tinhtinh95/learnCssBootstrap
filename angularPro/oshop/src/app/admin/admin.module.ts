@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { DataTableModule } from 'angular-6-datatable';
-import { CustomFormsModule } from 'ng2-validation';
+import { AuthGuardService } from 'shared/services/auth-guard.service';
 import { SharedModule } from 'shared/shared.module';
 
 import { AppRoutingModule } from '../app-routing.module';
@@ -18,14 +19,13 @@ import { AdminAuthGuardService } from './services/admin-auth-guard.service';
     ProductFormComponent
   ],
   imports: [
-    CommonModule,
-    FormsModule,
-    DataTableModule,
-    AppRoutingModule,
-    SharedModule
+    SharedModule,
+    RouterModule.forChild([
+      { path: 'admin/products', component: AdminProductsComponent, canActivate: [AuthGuardService, AdminAuthGuardService]},
+      { path: 'admin/products/new', component: ProductFormComponent, canActivate: [AuthGuardService, AdminAuthGuardService]},
+      { path: 'admin/products/:id', component: ProductFormComponent, canActivate: [AuthGuardService, AdminAuthGuardService]},
+      { path: 'admin/orders', component: AdminOrdersComponent, canActivate: [AuthGuardService, AdminAuthGuardService]},
+    ])
   ],
-  providers: [
-    AdminAuthGuardService
-  ]
 })
 export class AdminModule { }
