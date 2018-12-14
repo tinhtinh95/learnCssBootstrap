@@ -1,8 +1,8 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ProductService } from 'src/app/product.service';
-import { Subscription, Observable } from 'rxjs';
-import { Product } from 'src/app/models/product';
-import { DataTableResource } from 'angular5-data-table';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { ProductService } from 'shared/services/product.service';
+
+import { Product } from '../../../shared/models/product';
 
 @Component({
   selector: 'app-admin-products',

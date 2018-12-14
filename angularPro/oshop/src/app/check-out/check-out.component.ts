@@ -1,11 +1,11 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ShoppingCartService } from '../shopping-cart.service';
-import { ShoppingCart } from '../models/shopping-cart';
+import { ShoppingCartService } from 'shared/services/shopping-cart.service';
+import { ShoppingCart } from 'shared/models/shopping-cart';
 import { Subscription, iif } from 'rxjs';
-import { OrderService } from '../order.service';
-import { AuthService } from '../auth.service';
-import { Order } from '../models/order';
+import { OrderService } from 'shared/services/order.service';
+import { AuthService } from 'shared/services/auth.service';
 import { Router } from '@angular/router';
+import { Order } from '../shared/models/order';
 
 @Component({
   selector: 'app-check-out',

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ShoppingCart } from '../models/shopping-cart';
+import { ShoppingCart } from '../shared/models/shopping-cart';
 
 @Component({
   selector: 'app-shopping-cart-summary',
@@ -8,7 +8,6 @@ import { ShoppingCart } from '../models/shopping-cart';
 })
 export class ShoppingCartSummaryComponent {
   @Input('cart') cart: ShoppingCart;
-  
   constructor() {
     console.log(this.cart);
   }

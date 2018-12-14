@@ -1,5 +1,5 @@
 import { ShoppingCartItem } from './shopping-cart-item';
-import { Product } from 'src/app/models/product';
+import { Product } from './product';
 
 export class ShoppingCart {
     items: ShoppingCartItem[] = [];
